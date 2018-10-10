@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<style>
+			body {
+				background: url('http://lk.duinvest.com/takeabreak/themes/black/images/Wallpapers/PC/1600x1200/Image_05_1600x1200.jpg');
+				color: white;
+			}
+			.main {
+			    position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			.headr {
+				position: fixed;
+				top: 10%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-size: 50px;
+			}
+			.btn-group.button {
+			    background-color: #4CAF50;
+			    border: 1px solid green;
+			    color: white;
+			    padding: 15px 32px;
+			    text-align: center;
+			    text-decoration: none;
+			    display: inline-block;
+			    font-size: 16px;
+			    cursor: pointer;
+			    float: left;
+			}
+			.is_block {
+				display: block;
+				margin-bottom: 10px;
+			}
+			.button {
+				background-color: #4CAF50;
+			    border: 1px solid green;
+			    color: white;
+			    padding: 15px 32px;
+			    text-align: center;
+			    text-decoration: none;
+			    display: inline-block;
+			    font-size: 16px;
+			    cursor: pointer;
+			}
+			.btn-group .button:not(:last-child) {
+			    border-right: none;
+			}
+			.btn-group .button:hover {
+			    background-color: #3e8e41;
+			}
+		</style>
+	</head>
+	<body>
+		<div class = "headr">
+			<p>Predict Market Cap</app>
+		</div>
+		<div class = "main">
+			<form id = "form2" method="POST" action="/predict/predict_caps/" enctype="multipart/form-data">
+				{% csrf_token %}
+				<div class = "is_block">
+					<label>Enter company ticker </label>	
+					<input type="text" name="ticker2">
+				</div>
+				<!-- <a class="btn btn-primary" href="/predict/show_graph">OK</a> -->
+				<button class = "button" type="submit" value="submit">Predict Market Cap</button>
+			</form>
+		</div>
+	</body>
+</html>
